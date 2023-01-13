@@ -1,1 +1,0 @@
-# BashScripting_DockerElasticSearchKibana

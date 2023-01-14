@@ -1,8 +1,8 @@
 # Bash Scripting Approach for Docker Services, ElasticSearch & Kibana Deployment
 
 Before starting: 
-- ship scripts code to the client machine.
-- Prepare all the aws required credentials which are, IAM user with limited ECR,S3 & codecommit access.
+- Move scripts code to the client machine.
+- Set up required credentials for AWS an IAM user with limited access to ECR, S3 and codecommit.
 
 Kindly Follow the steps in order:
 

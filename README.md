@@ -18,7 +18,7 @@ it should create a new user with sudo privileges to manage all deployment instea
 Execute the Second Bash script called: python-compile-source.sh
 
 	>$(WB-Services) >$  bash python-compile-source.sh 3.8.10        
-  (_Note: I'm using WB-Services user now_)
+  (Note: I'm using WB-Services user now_)
 
 - The script should create a dedicated python environment compatible with Encryption application packages. 
 - The above passed parameter “3.8.10”: indicates the most suitable version of python which was recommended by the AI-team for Environment Encryption and Deployment.
@@ -48,7 +48,7 @@ Important Note: while it asks you for aws cli credentials, pass in the IAM crede
 
 Execute the fourth script called: services-deployment.sh
 
-	>$(WB-Services) >$  bash  wb-services-deployment.sh 3.8
+	>$(WB-Services) >$  bash  docker-services-deployment.sh 3.8
   
   (Note: the passed parameter “3.8”: refers to the current used python version.)
 
@@ -80,7 +80,7 @@ so in order to unlink with aws, remove your aws credentials there:
 
 	>$ sudo rm -rf ~/.aws/*
 
-- This will delete the entire aws directory files that holds credentials:   ~/.aws/credentials  &&  ~/.aws/config
+- This will delete the entire aws directory files that holds credentials:   `~/.aws/credentials`  &&  `~/.aws/config`
 
 - Also, it will invalidate the authentication for the ECR even if you do not remove the ECR token.
 

@@ -59,3 +59,31 @@ It should do the following:
 - Automated Configuration for ElasticSearch with an internal user for qna.
 - Automated Encryption & Decryption of the Environment .env files for each service based on the state.
 - Deployment for Docker services.
+
+
+### Add Services to startup system services
+
+it would be a best practice if you add all running docker services as a startup system services, so it's expected to spin up automatically if the server has been forced for any reboot process.
+
+- double check and test `services-startup.sh` for the absolute paths to services mounted volumes.
+- edit the `services-startup.service` by adding the absolute path of the `services-startup.sh` script.
+- run the `add-service-to-systemd.sh` script to add the service to systemd
+
+	>$ bash add-service-to-systemd.sh
+
+### Security procedures after complete deployment
+
+Delete all the AWS CLI programmatic access keys:
+
+It would be a security threat, if you leave the client machine linked to our live AWS account, like what it’s configured now.
+so in order to unlink with aws, remove your aws credentials there:
+
+	>$ sudo rm -rf ~/.aws/*
+
+- This will delete the entire aws directory files that holds credentials:   ~/.aws/credentials  &&  ~/.aws/config
+
+- Also, it will invalidate the authentication for the ECR even if you do not remove the ECR token.
+
+Once need to connect again, just issue the configure command and pass your keys:
+
+	>$ aws configure

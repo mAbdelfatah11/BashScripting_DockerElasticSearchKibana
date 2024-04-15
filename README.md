@@ -1,19 +1,17 @@
 # Bash Scripting Approach for Docker Services, ElasticSearch & Kibana Deployment
 
-Before starting: 
-- Move scripts code to the client machine.
-- Set up required credentials for AWS an IAM user with limited access to ECR, S3 and codecommit.
+In this project, you will apply Bash Scripting skills to automate deployment of ELK Stack across on-premises client machine and securly connect it to the cloud workloads.
 
-Kindly Follow the steps in order:
+Follow steps in order:
 
-#### Create Dedicated user - security wise:
+### Create a deployment Dedicated user - security wise:
 Execute the First bash script called: createuser.sh
 
 	>$ sudo su && bash createuser.sh
   
 it should create a new user with sudo privileges to manage all deployment instead of root user which might lead to a security concern from clients.
 
-#### Setup a Stable Environment for Python Compatible Packages
+### Setup a Stable Environment for Python Compatible Packages
 
 Execute the Second Bash script called: python-compile-source.sh
 
@@ -25,7 +23,7 @@ Execute the Second Bash script called: python-compile-source.sh
 
 Note: the most important thing about this script is, “this version of python may be changed later based on request from ai-team, so you just need to replace the current version with the new one, and re-execute the script to create a new environment, which will not force any packages dependency issue with the old one.
 
-#### Deployment Prerequisites Packages
+### Deployment Prerequisites Packages
 
 Execute the third Bash script called: Deployment-Prerequisits.sh
 
